@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "mistapp"
+version = "0.1.0"
+description = "No"
+authors = ["Isai Gordeev <isai.gordeev.2022@polytechnique.org>"]
+license = "No License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
