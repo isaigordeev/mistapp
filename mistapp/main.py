@@ -1,11 +1,11 @@
-import configparser
+from fastapi import FastAPI, HTTPException, Depends
+from mistapp.services.generate_match import match_generator_router
 
-config = configparser.ConfigParser()
+app = FastAPI()
+@app.get("/")
+async def root():
+    return {"Hello": "World"}
 
-config.read("config.ini")
+app.include_router(match_generator_router, prefix="/services", tags=["match"])
 
-db_host = config["database"]["host"]
-db_user = config["database"]["user"]
-db_password = config["database"]["password"]
 
-print(f"Host: {db_host}, User: {db_user}")
